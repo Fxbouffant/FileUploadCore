@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "File Upload";
+}
+
+<h1>File upload</h1>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index" class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-10">
+            <input id="files" name="files" type="file" multiple onchange="uploadFiles('files');" />
+        </div>
+    </div>
+</form>
+
+<div id="progress" class="progress" style="width:250px">
+    <div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+        0%
+    </div>
+</div>
+
+<span id="upload-status" style="display:none">Files uploaded.</span>
